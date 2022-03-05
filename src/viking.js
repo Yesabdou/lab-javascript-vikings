@@ -64,11 +64,25 @@ class War {
     this.saxonArmy.push(Saxon);
   }
   vikingAttack() {
-    Saxon.receiveDamage = Viking.strength;
-    if (Saxon.health < 0) {
-      this.saxonArmy.pop;
-    }
-    return Saxon.receiveDamage Viking.strength
+    // this.saxonArmy[indexSaxon].receiveDamage(
+    //   this.vikingArmy[indexViking].strength
+    // );
+    // if (this.saxonArmy[indexSaxon] > 0) {
+    //   return `A Saxon has received ${this.vikingArmy[indexViking].strength} points of damage`;
+    // } else {
+    //   this.saxonArmy.splice(indexSaxon, 1);
+    //   return `A Saxon has died in combat`;
+    // }
+
+    let indexV = Math.floor(Math.random() * this.vikingArmy.length);
+    let indexS = Math.floor(Math.random() * this.saxonArmy.length);
+    this.saxonArmy[indexS].receiveDamage(this.vikingArmy[indexV].strength);
+
+    // let indexViking = Math.floor(Math.random() * this.vikingArmy.length);
+    // let indexSaxon = Math.floor(Math.random() * this.saxonArmy.length);
+    // this.saxonArmy[indexSaxon].receiveDamage(
+    //   this.vikingArmy[indexViking].strength
+    // );
   }
   saxonAttack() {}
   showStatus() {}
